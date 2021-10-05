@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap");
+
+:root {
+    --brand-color: rgb(128, 0, 0);
+    --bg-color: rgb(250, 250, 250);
+    --text-color: rgb(35, 35, 35);
+    --footer-bg-color: rgb(35, 35, 35);
+    --footer-text-color: rgb(250, 250, 250);
+    --scrollbar-color: rgb(122, 122, 122);
+    --scrollbar-hover-color: rgb(70, 70, 70);
+
+    --is-mobile: 0;
+
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+/********************************
+ *            HEADER            *
+ ********************************/
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    background-color: var(--bg-color);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li a,
+.nav-collapse-items li a {
+    text-decoration: none;
+    outline: none;
+    color: var(--text-color);
+    border-bottom: 2px solid transparent;
+    border-radius: 2px;
+}
+
+.nav-item,
+.nav-collapse-item {
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+}
+
+.nav-item {
+    margin: 0 15px;
+    padding: 5px 0;
+}
+
+.nav-item:hover,
+.nav-item:active,
+.nav-selected {
+    color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+.nav-logo {
+    margin: 0 30px;
+}
+
+.nav-logo img {
+    width: 100px;
+    transition: width 0.3s ease;
+}
+
+.nav-logo img.shrink {
+    width: 40px;
+}
+
+.nav-collapse-items,
+.nav-collapse {
+    display: none;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
+
+.nav-logo:focus-visible,
+.nav-item:focus-visible {
+    outline: 2px solid var(--brand-color);
+}
+
+.nav-logo:active {
+    outline: none;
+}
+
+/********************************
+ *           CONTENT            *
+ ********************************/
+
+.content {
+    padding: 0 30px;
+    max-width: 100%;
+    min-height: fit-content;
+}
+
+h2,
+h3 {
+    font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+/********************************
+ *          SCROLLBAR           *
+ ********************************/
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border: 0.25em solid var(--bg-color);
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover-color);
+}
+
+/********************************
+ *            FOOTER            *
+ ********************************/
+
+.footer {
+    position: relative;
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 20px 30px;
+}
+
+.social,
+.contacts,
+.credits {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 20px;
+    padding: 10px;
+}
+
+.contacts,
+.credits {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+}
+
+.thin {
+    font-weight: 200;
+}
+
+.contacts {
+    font-size: 14px;
+}
+
+.credits {
+    font-size: 12px;
+}
+
+.social ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    text-decoration: none;
+    gap: 40px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/********************************
+ *            TESTS             *
+ ********************************/
+
+/* --- TEST 1 --- */
+.section-1 {
+    height: 400px;
+    background-image: url(./img/mobili_in_legno_su_misura.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+    margin: 20px 0;
+}
+
+.section-1 h2 {
+    margin-top: 10px;
+    display: inline;
+}
+
+.section-1 h3 {
+    margin-top: 10px;
+    width: 40%;
+}
+
+/* --- TEST 2 --- */
+.section-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 20px 0;
+}
+
+.section-2 .img {
+    height: 400px;
+    background-image: url(./img/mobili_artigianali_fatti_a_mano_in_italia.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-2 .text {
+    text-align: right;
+    padding-left: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section-2 .text h3 {
+    margin-top: 20px;
+}
+
+/********************************
+ *        MEDIA QUERIES         *
+ ********************************/
+
+@media (max-width: 650px) {
+    :root {
+        --is-mobile: 1;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .nav-collapse {
+        display: block;
+        position: absolute;
+        left: 30px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .nav-collapse-icon:hover,
+    .nav-collapse-icon:active {
+        color: var(--brand-color);
+    }
+
+    .nav-collapse-items.visible {
+        height: 205px;
+        transition: height 500ms 0ms;
+    }
+
+    .nav-collapse-items {
+        display: block;
+        position: sticky;
+        width: 100%;
+        overflow: hidden; /* Hide the element content, while height = 0 */
+        height: 0;
+        transition: height 500ms 0ms;
+        background-color: var(--bg-color);
+    }
+
+    .nav-collapse-items li a.nav-collapse-selected {
+        color: var(--brand-color);
+    }
+
+    .nav-collapse-items li {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-collapse-icon {
+        color: var(--text-color);
+    }
+
+    .nav-collapse-item {
+        display: block;
+        padding: 15px 0;
+    }
+
+    .nav-collapse-item:hover,
+    .nav-collapse-item:active {
+        color: var(--brand-color);
+    }
+
+    .contacts span {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 5px;
+    }
+
+    .contacts .separator {
+        display: none;
+    }
+
+    /********************************
+    *            TESTS             *
+    ********************************/
+
+    /* --- TEST 1 ---*/
+    .section-1 {
+        text-align: center;
+    }
+
+    .section-1 h3 {
+        width: 100%;
+    }
+
+    /* --- TEST 2 --- */
+    .section-2 {
+        grid-template-columns: 100%;
+    }
+
+    .section-2 .text {
+        text-align: center;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+}
