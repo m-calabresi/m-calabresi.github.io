@@ -224,8 +224,16 @@ h3 {
 
 /* --- TEST 1 --- */
 .section-1 {
-    height: 400px;
-    background-image: url(./img/mobili_in_legno_su_misura.jpg);
+    min-height: 400px;
+    background-image: url(./img/1/mobili_in_legno_su_misura.jpg);
+    background-image: image-set(
+        url(./img/1/mobili_in_legno_su_misura.webp) 1x,
+        url(./img/1/mobili_in_legno_su_misura.avif) 2x
+    );
+    background-image: -webkit-image-set(
+        url(./img/1/mobili_in_legno_su_misura.webp) 1x,
+        url(./img/1/mobili_in_legno_su_misura.avif) 2x
+    );
     background-repeat: no-repeat;
     background-size: cover;
     padding: 30px;
@@ -251,7 +259,15 @@ h3 {
 
 .section-2 .img {
     height: 400px;
-    background-image: url(./img/mobili_artigianali_fatti_a_mano_in_italia.jpg);
+    background-image: url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.jpg);
+    background-image: image-set(
+        url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.webp) 1x,
+        url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.avif) 2x
+    );
+    background-image: -webkit-image-set(
+        url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.webp) 1x,
+        url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.avif) 2x
+    );
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
