@@ -253,15 +253,9 @@ h3 {
 
 .section-2 .img {
     height: 400px;
-    background-image: url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.jpg);
-    background-image: image-set(
-        url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.webp) 1x,
-        url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.avif) 2x
-    );
-    background-image: -webkit-image-set(
-        url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.webp) 1x,
-        url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.avif) 2x
-    );
+    background-image:  url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.avif),
+    url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.webp),
+    url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
