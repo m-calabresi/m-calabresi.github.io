@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap");
 
 :root {
-    --brand-color: rgb(128, 0, 0);
+    --brand-color: rgb(0, 0, 0);
     --bg-color: rgb(250, 250, 250);
     --text-color: rgb(35, 35, 35);
     --footer-bg-color: rgb(35, 35, 35);
@@ -95,8 +95,8 @@ nav li a,
 }
 
 .nav-logo img.shrink {
-    width: 40px;
-    height: 56px;
+    width: 56px;
+    height: 41px;
 }
 
 .nav-collapse-items,
