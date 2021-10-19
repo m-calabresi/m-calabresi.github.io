@@ -58,7 +58,7 @@ nav li {
 }
 
 nav li a,
-.nav-collapse-items li a {
+.nav-collapse-item {
     text-decoration: none;
     outline: none;
     color: var(--text-color);
