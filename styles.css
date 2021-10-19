@@ -68,6 +68,9 @@ nav li a,
 
 .nav-item,
 .nav-collapse-item {
+    width: fit-content;
+    -moz-width: fit-content;
+    margin: 0 auto;
     font-size: 16px;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -81,6 +84,8 @@ nav li a,
 
 .nav-item:hover,
 .nav-item:active,
+.nav-collapse-item:hover,
+.nav-collapse-item:active,
 .nav-selected {
     color: var(--brand-color);
     border-color: var(--brand-color);
@@ -309,14 +314,16 @@ h3 {
         background-color: var(--bg-color);
     }
 
-    .nav-collapse-items li a.nav-collapse-selected {
+    .nav-collapse-item.nav-collapse-selected {
         color: var(--brand-color);
+        border-color: var(--brand-color);
     }
 
     .nav-collapse-items li {
         display: block;
         width: 100%;
         text-align: center;
+        padding: 15px 0;
     }
 
     .nav-collapse-icon {
@@ -325,12 +332,6 @@ h3 {
 
     .nav-collapse-item {
         display: block;
-        padding: 15px 0;
-    }
-
-    .nav-collapse-item:hover,
-    .nav-collapse-item:active {
-        color: var(--brand-color);
     }
 
     .contacts span {
