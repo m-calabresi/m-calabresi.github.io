@@ -228,18 +228,29 @@ h3 {
 
 /* --- TEST 1 --- */
 .section-1 {
-    min-height: 400px;
-    background-image: url(./img/1/mobili_in_legno_su_misura.avif),
-        url(./img/1/mobili_in_legno_su_misura.webp),
-        url(./img/1/mobili_in_legno_su_misura.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-height: 400px;
     margin: 20px 0;
 }
 
+.section-1 picture img {
+    max-width: 100%;
+}
+
+.section-1 .text-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: calc(20%);
+    left: 20px;
+}
+
 .section-1 h2 {
-    margin-top: 10px;
     display: inline;
 }
 
@@ -257,12 +268,6 @@ h3 {
 
 .section-2 .img {
     height: 400px;
-    background-image:  url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.avif),
-    url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.webp),
-    url(./img/2/mobili_artigianali_fatti_a_mano_in_italia.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .section-2 .text {
@@ -349,7 +354,11 @@ h3 {
     ********************************/
 
     /* --- TEST 1 ---*/
-    .section-1 {
+
+    .section-1 .text-container {
+        position: relative;
+        top: unset;
+        left: unset;
         text-align: center;
     }
 
