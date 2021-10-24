@@ -87,10 +87,24 @@
 		<div class="content">
 			<div class="section-1">
 				<picture>
-					<source srcset="/img/1/mobili_in_legno_su_misura.avif" type="image/avif">
-					<source srcset="/img/1/mobili_in_legno_su_misura.webp" type="image/webp">
-					<source srcset="/img/1/mobili_in_legno_su_misura.jpg" type="image/jpeg">
-					<img src="/img/1/mobili_in_legno_su_misura.jpeg" alt="a man carving wood">
+					<source media="(min-width: 1050px)" 
+							srcset="/img/1/large.avif,
+									/img/1/large.webp,
+									/img/1/large.jpg"
+							sizes="100vw">
+
+					<source media="(min-width: 500px) and (max-width: 1050px)"
+							srcset="/img/1/medium.avif,
+									/img/1/medium.webp,
+									/img/1/medium.jpg"
+							sizes="100vw">
+
+					<source srcset="/img/1/small.avif,
+									/img/1/small.webp,
+									/img/1/small.jpg"
+							sizes="100vw">
+	
+					<img src="/img/1/small.jpg" alt="A man carving wood">
 				</picture>
 				<div class="text-container">	
 					<h2>MOBILI DI QUALITÀ</h2>
