@@ -12,6 +12,7 @@
     --is-mobile: 0;
 
     font-size: 16px;
+    font-family: "Montserrat", sans-serif;
 }
 
 * {
@@ -108,7 +109,7 @@ nav li a,
     display: none;
 }
 
-/* remove inner dotted square on focused itms in firefox*/
+/* remove inner dotted square on focused items in Firefox */
 ::-moz-focus-inner {
     border: 0;
 }
@@ -126,24 +127,6 @@ nav li a,
  *           CONTENT            *
  ********************************/
 
-.content {
-    padding: 0 30px;
-    max-width: 100%;
-    min-height: fit-content;
-}
-
-h2,
-h3 {
-    font-family: "Montserrat", sans-serif;
-}
-
-h2 {
-    font-size: 2.5rem;
-}
-
-h3 {
-    font-size: 1rem;
-}
 
 /********************************
  *          SCROLLBAR           *
@@ -171,121 +154,51 @@ h3 {
  *            FOOTER            *
  ********************************/
 
-.footer {
-    position: relative;
-    background-color: var(--footer-bg-color);
-    color: var(--footer-text-color);
-    padding: 20px 30px;
-}
-
-.social,
-.contacts,
-.credits {
+footer {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10px 20px;
-    padding: 10px;
-}
-
-.contacts,
-.credits {
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-}
-
-.thin {
-    font-weight: 200;
-}
-
-.contacts {
-    font-size: 14px;
-}
-
-.credits {
-    font-size: 12px;
-}
-
-.social ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    list-style-type: none;
-    text-decoration: none;
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 30px 0;
     gap: 40px;
 }
 
-.footer a {
+footer a {
     text-decoration: none;
     color: inherit;
 }
 
-/********************************
- *            TESTS             *
- ********************************/
+footer .social a {
+    margin: 0 10px;
+}
 
-/* --- TEST 1 --- */
-.section-1 {
-    position: relative;
+footer .contacts,
+footer .credits {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    overflow: hidden;
-}
-
-.section-1 picture img {
-    max-width: 100%;
-    max-height: 400px;
-}
-
-.section-1 .text-container {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: calc(20%);
-    left: 20px;
-}
-
-.section-1 h2 {
-    display: inline;
-}
-
-.section-1 h3 {
-    margin-top: 10px;
-    width: 40%;
-}
-
-/* --- TEST 2 --- */
-.section-2 {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    margin: 20px 0;
-}
-
-.section-2 .img {
-    height: 400px;
-}
-
-.section-2 .text {
-    text-align: right;
-    padding-left: 40px;
-    display: flex;
     justify-content: center;
-    flex-direction: column;
 }
 
-.section-2 .text h3 {
-    margin-top: 20px;
+footer .contacts {
+    font-size: .8rem;
+}
+
+footer .credits {
+    font-size: .65rem;
+}
+
+footer .thin {
+    font-weight: 200;
 }
 
 /********************************
  *        MEDIA QUERIES         *
  ********************************/
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     :root {
         --is-mobile: 1;
     }
@@ -337,42 +250,12 @@ h3 {
         display: block;
     }
 
-    .contacts span {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 10px 5px;
+    footer .contacts {
+        flex-direction: column;
+        gap: 20px;
     }
 
-    .contacts .separator {
+    footer .separator {
         display: none;
-    }
-
-    /********************************
-    *            TESTS             *
-    ********************************/
-
-    /* --- TEST 1 ---*/
-
-    .section-1 .text-container {
-        position: relative;
-        top: unset;
-        left: unset;
-        text-align: center;
-    }
-
-    .section-1 h3 {
-        width: 100%;
-    }
-
-    /* --- TEST 2 --- */
-    .section-2 {
-        grid-template-columns: 100%;
-    }
-
-    .section-2 .text {
-        text-align: center;
-        padding-left: 0;
-        margin-top: 20px;
     }
 }
