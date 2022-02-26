@@ -9,27 +9,36 @@
      */
     function checkMobileBehavior() {
         let isMobile = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--is-mobile"));
+        let mobileToggle = document.querySelector(".nav-mobile-toggle");
+        let navItems = document.querySelectorAll(".nav-item");
 
         if (isMobile) {
-            document.querySelector("nav .nav-collapse").onclick = hamburgerClick;
+            mobileToggle.onclick = toggleClick;
             window.onscroll = mobileScrollFunction;
+            
+            document.querySelector(".nav-mobile-items").append(...navItems);
         } else {
-            document.querySelector("nav .nav-collapse").onclick = null;
+            mobileToggle.onclick = null;
             window.onscroll = desktopScrollFunction;
+
+            let navItemsContainer = document.querySelector(".nav-items");
+            if (navItemsContainer.childElementCount === 1) {
+                navItemsContainer.append(...navItems);
+            }
         }
     }
 
     /**
-     * On hamburger-menu click, show menu (if on top of the page),
+     * On mobile-toggle click, show menu (if on top of the page),
      * or nothing (if not at the top)
      */
-    function hamburgerClick() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    function toggleClick() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
 
         if (isPageScrolled()) {
             showMenu = true;
         } else {
-            toggleMenu();
+            document.querySelector(".nav-mobile-items").classList.toggle("visible");
         }
     }
 
@@ -40,18 +49,21 @@
      *  - scroll to top and expand hamburger menu (if user clicked on it and he is not at the page top)
      */
     function mobileScrollFunction() {
+        let navLogoImg = document.querySelector(".nav-logo img");
+        let navItems = document.querySelector(".nav-mobile-items");
+
         if (isPageScrolled()) {
-            document.querySelector(".nav-logo img").classList.add("shrink");
+            navLogoImg.classList.add("shrink");
 
             if (!showMenu) {
-                collapseMenu();
+                navItems.classList.remove("visible");
             }
         } else {
-            document.querySelector(".nav-logo img").classList.remove("shrink");
+            navLogoImg.classList.remove("shrink");
 
             if (showMenu) {
                 showMenu = false;
-                expandMenu();
+                navItems.classList.add("visible");
             }
         }
     }
@@ -61,11 +73,8 @@
      * - resize the navbar's padding and the logo's font size
      */
     function desktopScrollFunction() {
-        if (isPageScrolled()) {
-            document.querySelector(".nav-logo img").classList.add("shrink");
-        } else {
-            document.querySelector(".nav-logo img").classList.remove("shrink");
-        }
+        let logoImg = document.querySelector(".nav-logo img");
+        isPageScrolled() ? logoImg.classList.add("shrink") : logoImg.classList.remove("shrink")
     }
 
     /**
@@ -73,32 +82,5 @@
      */
     function isPageScrolled() {
         return document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
-    }
-
-    /**
-     * Expands the hamburger menu.
-     */
-    function expandMenu() {
-        document.querySelector(".nav-collapse-items").classList.add("visible");
-    }
-
-    /**
-     * Collapses the hamburger menu.
-     */
-    function collapseMenu() {
-        document.querySelector(".nav-collapse-items").classList.remove("visible");
-    }
-
-    /**
-     * Toggles the hamburger menu.
-     */
-    function toggleMenu() {
-        let menu = document.querySelector(".nav-collapse-items");
-
-        if (menu.classList.contains("visible")) {
-            menu.classList.remove("visible");
-        } else {
-            menu.classList.add("visible");
-        }
     }
 })();

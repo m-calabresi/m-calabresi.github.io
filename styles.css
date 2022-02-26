@@ -47,56 +47,19 @@ nav {
     background-color: var(--bg-color);
 }
 
-nav ul {
+.nav-items {
     display: flex;
     align-items: center;
     justify-content: center;
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-}
-
-nav li a,
-.nav-collapse-item {
-    text-decoration: none;
-    outline: none;
-    color: var(--text-color);
-    border-bottom: 2px solid var(--bg-color);
-}
-
-.nav-item,
-.nav-collapse-item {
-    width: fit-content;
-    -moz-width: fit-content;
-    margin: 0 auto;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    font-family: "Montserrat", sans-serif;
-}
-
-.nav-item {
-    margin: 0 15px;
-    padding: 5px 0;
-}
-
-.nav-item:hover,
-.nav-item:active,
-.nav-collapse-item:hover,
-.nav-collapse-item:active,
-.nav-selected {
-    color: var(--brand-color);
-    border-color: var(--brand-color);
+    gap: 30px;
 }
 
 .nav-logo {
-    margin: 0 30px;
+    order: 1;
 }
 
 .nav-logo img {
-    transition: width 0.3s ease, height 0.3s ease;
+    transition: width 0.2s ease, height 0.2s ease;
 }
 
 .nav-logo img.shrink {
@@ -104,8 +67,27 @@ nav li a,
     height: 41px;
 }
 
-.nav-collapse-items,
-.nav-collapse {
+.nav-item:nth-of-type(n + 4) {
+    order: 2;
+}
+
+.nav-item {
+    text-decoration: none;
+    outline: none;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--bg-color);
+    transition: border-color 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item:active,
+.nav-selected {
+    color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+.nav-mobile-items,
+.nav-mobile-toggle {
     display: none;
 }
 
@@ -207,7 +189,7 @@ footer .thin {
         display: none;
     }
 
-    .nav-collapse {
+    .nav-mobile-toggle {
         display: block;
         position: absolute;
         left: 30px;
@@ -215,39 +197,30 @@ footer .thin {
         cursor: pointer;
     }
 
-    .nav-collapse-items.visible {
-        height: 205px;
-        transition: height 500ms 0ms;
-    }
-
-    .nav-collapse-items {
-        display: block;
-        position: sticky;
-        width: 100%;
-        overflow: hidden; /* Hide the element content, while height = 0 */
-        height: 0;
-        transition: height 500ms 0ms;
-        background-color: var(--bg-color);
-    }
-
-    .nav-collapse-item.nav-collapse-selected {
-        color: var(--brand-color);
-        border-color: var(--brand-color);
-    }
-
-    .nav-collapse-items li {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 15px 0;
-    }
-
-    .nav-collapse-icon {
+    .nav-mobile-toggle a {
         color: var(--text-color);
     }
 
-    .nav-collapse-item {
+    .nav-mobile-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        overflow: hidden; /* Hide the element content, while height = 0 */
+        height: 0;
+        transition: height 0.3s ease-in-out;
+        background-color: var(--bg-color);
+    }
+
+    .nav-mobile-items.visible {
+        height: 205px;
+    }
+
+    .nav-mobile-items a {
         display: block;
+        text-align: center;
+        padding: 15px 0;
     }
 
     footer .contacts {
