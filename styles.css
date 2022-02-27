@@ -181,7 +181,7 @@ footer .thin {
  *        MEDIA QUERIES         *
  ********************************/
 
-@media (max-width: 1000px) {
+@media all and (max-width: 1000px) {
     :root {
         --is-mobile: 1;
     }
@@ -232,12 +232,14 @@ footer .thin {
         gap: 15px;
         position: sticky;
         overflow: hidden; /* Hide the element content, while height = 0 */
-        height: 0;
-        transition: height 0.3s ease-in-out;
+        margin-top: 0;
+        max-height: 0rem;
+        transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
     }
 
     .nav-mobile-items.visible {
-        height: 190px;
+        margin-top: 10px;
+        max-height: 200px;
     }
 
     footer .contacts {
