@@ -72,6 +72,7 @@ nav {
 }
 
 .nav-item {
+    padding: 5px 0;
     text-decoration: none;
     outline: none;
     color: var(--text-color);
@@ -189,10 +190,6 @@ footer .thin {
         flex-direction: column;
     }
 
-    .nav-item {
-        display: none;
-    }
-
     .nav-mobile-toggle {
         display: block;
         position: absolute;
@@ -231,22 +228,16 @@ footer .thin {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content:flex-end;
+        gap: 15px;
         position: sticky;
         overflow: hidden; /* Hide the element content, while height = 0 */
         height: 0;
         transition: height 0.3s ease-in-out;
-        background-color: var(--bg-color);
     }
 
     .nav-mobile-items.visible {
-        height: 205px;
-    }
-
-    .nav-mobile-items a {
-        display: block;
-        text-align: center;
-        padding: 15px 0;
+        height: 190px;
     }
 
     footer .contacts {
