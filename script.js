@@ -13,7 +13,7 @@
         let navItems = document.querySelectorAll(".nav-item");
 
         if (isMobile) {
-            mobileToggle.onclick = toggleClick;
+            mobileToggle.onclick = mobileToggleClick;
             window.onscroll = mobileScrollFunction;
             
             document.querySelector(".nav-mobile-items").append(...navItems);
@@ -22,7 +22,7 @@
             window.onscroll = desktopScrollFunction;
 
             let navItemsContainer = document.querySelector(".nav-items");
-            if (navItemsContainer.childElementCount === 1) {
+            if (navItemsContainer.childElementCount === 2) {
                 navItemsContainer.append(...navItems);
             }
         }
@@ -32,13 +32,14 @@
      * On mobile-toggle click, show menu (if on top of the page),
      * or nothing (if not at the top)
      */
-    function toggleClick() {
+    function mobileToggleClick() {
         window.scrollTo({ top: 0, behavior: "smooth" });
 
         if (isPageScrolled()) {
             showMenu = true;
         } else {
             document.querySelector(".nav-mobile-items").classList.toggle("visible");
+            document.querySelector(".nav-mobile-toggle").classList.toggle("active");
         }
     }
 
@@ -51,12 +52,14 @@
     function mobileScrollFunction() {
         let navLogoImg = document.querySelector(".nav-logo img");
         let navItems = document.querySelector(".nav-mobile-items");
+        let navToggle = document.querySelector(".nav-mobile-toggle");
 
         if (isPageScrolled()) {
             navLogoImg.classList.add("shrink");
 
             if (!showMenu) {
                 navItems.classList.remove("visible");
+                navToggle.classList.remove("active");
             }
         } else {
             navLogoImg.classList.remove("shrink");
@@ -64,6 +67,7 @@
             if (showMenu) {
                 showMenu = false;
                 navItems.classList.add("visible");
+                navToggle.classList.add("active");
             }
         }
     }
@@ -73,8 +77,7 @@
      * - resize the navbar's padding and the logo's font size
      */
     function desktopScrollFunction() {
-        let logoImg = document.querySelector(".nav-logo img");
-        isPageScrolled() ? logoImg.classList.add("shrink") : logoImg.classList.remove("shrink")
+        document.querySelector(".nav-logo img").classList.toggle("shrink", isPageScrolled());
     }
 
     /**
