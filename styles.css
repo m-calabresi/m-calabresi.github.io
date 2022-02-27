@@ -11,7 +11,7 @@
 
     --is-mobile: 0;
 
-    font-size: 16px;
+    font-size: 62.5%; /* 10px */
     font-family: "Montserrat", sans-serif;
 }
 
@@ -43,7 +43,7 @@ nav {
     z-index: 999;
     justify-content: center;
     align-items: center;
-    padding: 15px 0;
+    padding: 1.5rem 0;
     background-color: var(--bg-color);
 }
 
@@ -51,7 +51,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 3rem;
 }
 
 .nav-logo {
@@ -72,11 +72,12 @@ nav {
 }
 
 .nav-item {
-    padding: 5px 0;
+    font-size: 1.6rem;
+    padding: .5rem 0;
     text-decoration: none;
     outline: none;
     color: var(--text-color);
-    border-bottom: 2px solid var(--bg-color);
+    border-bottom: .2rem solid var(--bg-color);
     transition: border-color 0.2s ease;
 }
 
@@ -99,7 +100,7 @@ nav {
 
 .nav-logo:focus-visible,
 .nav-item:focus-visible {
-    outline: 2px solid var(--brand-color);
+    outline: .2rem solid var(--brand-color);
 }
 
 .nav-logo:active {
@@ -110,13 +111,16 @@ nav {
  *           CONTENT            *
  ********************************/
 
+main {
+    font-size: 1.6rem;
+}
 
 /********************************
  *          SCROLLBAR           *
  ********************************/
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 1.5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -144,8 +148,8 @@ footer {
     justify-content: center;
     background-color: var(--footer-bg-color);
     color: var(--footer-text-color);
-    padding: 30px 0;
-    gap: 40px;
+    padding: 3rem 0;
+    gap: 4rem;
 }
 
 footer a {
@@ -154,7 +158,7 @@ footer a {
 }
 
 footer .social a {
-    margin: 0 10px;
+    margin: 0 1rem;
 }
 
 footer .contacts,
@@ -166,11 +170,11 @@ footer .credits {
 }
 
 footer .contacts {
-    font-size: .8rem;
+    font-size: 1.2rem;
 }
 
 footer .credits {
-    font-size: .65rem;
+    font-size: 1rem;
 }
 
 footer .thin {
@@ -181,7 +185,7 @@ footer .thin {
  *        MEDIA QUERIES         *
  ********************************/
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 64rem) { /* uses base font-size (16px). to activate at 1024px: 64rem=1024px/16px */
     :root {
         --is-mobile: 1;
     }
@@ -193,8 +197,8 @@ footer .thin {
     .nav-mobile-toggle {
         display: block;
         position: absolute;
-        left: 30px;
-        padding: 10px;
+        left: 3rem;
+        padding: 1rem;
         cursor: pointer;
     }
 
@@ -204,9 +208,9 @@ footer .thin {
 
     .nav-mobile-toggle .bar {
         display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
+        width: 2.5rem;
+        height: .3rem;
+        margin: .5rem auto;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         background-color: #101010;
@@ -217,11 +221,11 @@ footer .thin {
     }
 
     .nav-mobile-toggle.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(.8rem) rotate(45deg);
     }
 
     .nav-mobile-toggle.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-.8rem) rotate(-45deg);
     }
 
     .nav-mobile-items {
@@ -229,7 +233,7 @@ footer .thin {
         flex-direction: column;
         align-items: center;
         justify-content:flex-end;
-        gap: 15px;
+        gap: 1.5rem;
         position: sticky;
         overflow: hidden; /* Hide the element content, while height = 0 */
         margin-top: 0;
@@ -238,13 +242,13 @@ footer .thin {
     }
 
     .nav-mobile-items.visible {
-        margin-top: 10px;
-        max-height: 200px;
+        margin-top: 1rem;
+        max-height: 20rem;
     }
 
     footer .contacts {
         flex-direction: column;
-        gap: 20px;
+        gap: 2rem;
     }
 
     footer .separator {
