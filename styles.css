@@ -215,6 +215,7 @@ footer .credits {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 footer .contacts {
