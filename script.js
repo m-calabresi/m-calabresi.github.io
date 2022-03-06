@@ -1,9 +1,9 @@
 (function () {
     window.onload = checkMobileBehavior;
     window.onresize = checkMobileBehavior;
-
+    
     let showMenu = false;
-
+    
     /**
      * Enables the mobile/desktop behavior depending on screen size.
      */
@@ -11,7 +11,7 @@
         let isMobile = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--is-mobile"));
         let mobileToggle = document.querySelector(".nav-mobile-toggle");
         let navItems = document.querySelectorAll(".nav-item");
-
+        
         if (isMobile) {
             mobileToggle.onclick = mobileToggleClick;
             window.onscroll = mobileScrollFunction;
@@ -20,21 +20,21 @@
         } else {
             mobileToggle.onclick = null;
             window.onscroll = desktopScrollFunction;
-
+            
             let navItemsContainer = document.querySelector(".nav-items");
             if (navItemsContainer.childElementCount === 2) {
                 navItemsContainer.append(...navItems);
             }
         }
     }
-
+    
     /**
      * On mobile-toggle click, show menu (if on top of the page),
      * or nothing (if not at the top)
      */
     function mobileToggleClick() {
         window.scrollTo({ top: 0, behavior: "smooth" });
-
+        
         if (isPageScrolled()) {
             showMenu = true;
         } else {
@@ -42,7 +42,7 @@
             document.querySelector(".nav-mobile-toggle").classList.toggle("active");
         }
     }
-
+    
     /**
      * When the user scrolls down from the top of the document:
      *  - resize the navbar's padding and the logo's font size
@@ -53,17 +53,17 @@
         let navLogoImg = document.querySelector(".nav-logo img");
         let navItems = document.querySelector(".nav-mobile-items");
         let navToggle = document.querySelector(".nav-mobile-toggle");
-
+        
         if (isPageScrolled()) {
             navLogoImg.classList.add("shrink");
-
+            
             if (!showMenu) {
                 navItems.classList.remove("visible");
                 navToggle.classList.remove("active");
             }
         } else {
             navLogoImg.classList.remove("shrink");
-
+            
             if (showMenu) {
                 showMenu = false;
                 navItems.classList.add("visible");
@@ -71,7 +71,7 @@
             }
         }
     }
-
+    
     /**
      * When the user scrolls down from the top of the document:
      * - resize the navbar's padding and the logo's font size
@@ -79,7 +79,7 @@
     function desktopScrollFunction() {
         document.querySelector(".nav-logo img").classList.toggle("shrink", isPageScrolled());
     }
-
+    
     /**
      * Whether or not the visible portion of the screen is far from the top part of the page.
      */

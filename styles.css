@@ -73,11 +73,11 @@ nav {
 
 .nav-item {
     font-size: 1.6rem;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     text-decoration: none;
     outline: none;
     color: var(--text-color);
-    border-bottom: .2rem solid var(--bg-color);
+    border-bottom: 0.2rem solid var(--bg-color);
     transition: border-color 0.2s ease;
 }
 
@@ -100,7 +100,7 @@ nav {
 
 .nav-logo:focus-visible,
 .nav-item:focus-visible {
-    outline: .2rem solid var(--brand-color);
+    outline: 0.2rem solid var(--brand-color);
 }
 
 .nav-logo:active {
@@ -209,8 +209,8 @@ footer .thin {
     .nav-mobile-toggle .bar {
         display: block;
         width: 2.5rem;
-        height: .3rem;
-        margin: .5rem auto;
+        height: 0.3rem;
+        margin: 0.5rem auto;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         background-color: #101010;
@@ -221,18 +221,18 @@ footer .thin {
     }
 
     .nav-mobile-toggle.active .bar:nth-child(1) {
-        transform: translateY(.8rem) rotate(45deg);
+        transform: translateY(0.8rem) rotate(45deg);
     }
 
     .nav-mobile-toggle.active .bar:nth-child(3) {
-        transform: translateY(-.8rem) rotate(-45deg);
+        transform: translateY(-0.8rem) rotate(-45deg);
     }
 
     .nav-mobile-items {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content:flex-end;
+        justify-content: flex-end;
         gap: 1.5rem;
         position: sticky;
         overflow: hidden; /* Hide the element content, while height = 0 */
