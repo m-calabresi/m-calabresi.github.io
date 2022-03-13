@@ -46,7 +46,7 @@
     /**
      * When the user scrolls down from the top of the document:
      *  - resize the navbar's padding and the logo's font size
-     *  - collapse hamburger menu (if expanded)
+     *  - collapse hamburger menu (if expanded) [COMMENTED]
      *  - scroll to top and expand hamburger menu (if user clicked on it and he is not at the page top)
      */
     function mobileScrollFunction() {
@@ -57,10 +57,11 @@
         if (isPageScrolled()) {
             navLogoImg.classList.add("shrink");
             
-            if (!showMenu) {
-                navItems.classList.remove("visible");
-                navToggle.classList.remove("active");
-            }
+            // [COMMENTED]
+            // if (!showMenu) {
+            //     navItems.classList.remove("visible");
+            //     navToggle.classList.remove("active");
+            // }
         } else {
             navLogoImg.classList.remove("shrink");
             
