@@ -131,7 +131,23 @@ h1 {
 
 @media screen and (max-width: 600px) {
     header {
-        background-image: url(./img/scott-web-600-600.avif), url(./img/scott-web-600-600.webp), url(./img/scott-web-600-600.png);
+        background-image: url(./img/scott-web-600-600.png);
+        background-image: -webkit-image-set(
+            url(./img/scott-web-600-600.avif) 1x,
+            url(./img/scott-web-600-600.avif) 2x,
+            url(./img/scott-web-600-600.webp) 1x,
+            url(./img/scott-web-600-600.webp) 2x,
+            url(./img/scott-web-600-600.png) 1x,
+            url(./img/scott-web-600-600.png) 2x
+        );
+        background-image: image-set(
+            url(./img/scott-web-600-600.avif) 1x,
+            url(./img/scott-web-600-600.avif) 2x,
+            url(./img/scott-web-600-600.webp) 1x,
+            url(./img/scott-web-600-600.webp) 2x,
+            url(./img/scott-web-600-600.png) 1x,
+            url(./img/scott-web-600-600.png) 2x
+        );
         background-size: cover;
         background-repeat: no-repeat;
         min-height: 600px;
@@ -143,7 +159,23 @@ h1 {
 
 @media screen and (min-width: 601px) and (max-width: 1200px) {
     header {
-        background-image: url(./img/scott-web-1000-500.avif), url(./img/scott-web-1000-500.webp), url(./img/scott-web-1000-500.png);
+        background-image: url(./img/scott-web-1000-500.png);
+        background-image: -webkit-image-set(
+            url(./img/scott-web-1000-500.avif) 1x,
+            url(./img/scott-web-1000-500.avif) 2x,
+            url(./img/scott-web-1000-500.webp) 1x,
+            url(./img/scott-web-1000-500.webp) 2x,
+            url(./img/scott-web-1000-500.png) 1x,
+            url(./img/scott-web-1000-500.png) 2x
+        );
+        background-image: image-set(
+            url(./img/scott-web-1000-500.avif) 1x,
+            url(./img/scott-web-1000-500.avif) 2x,
+            url(./img/scott-web-1000-500.webp) 1x,
+            url(./img/scott-web-1000-500.webp) 2x,
+            url(./img/scott-web-1000-500.png) 1x,
+            url(./img/scott-web-1000-500.png) 2x
+        );
         background-size: cover;
         min-height: 500px;
         border-bottom: 2rem solid hsl(220deg, 50%, 70%);
@@ -154,7 +186,24 @@ h1 {
 
 @media screen and (min-width: 1201px) {
     header {
-        background-image: url(./img/scott-web-1550-900.avif), url(./img/scott-web-1550-900.webp), url(./img/scott-web-1550-900.png);
+        background-image: url(./img/scott-web-1550-900.png);
+        background-image: -webkit-image-set(
+            url(./img/scott-web-1550-900.avif) 1x,
+            url(./img/scott-web-1550-900.avif) 2x,
+            url(./img/scott-web-1550-900.webp) 1x,
+            url(./img/scott-web-1550-900.webp) 2x,
+            url(./img/scott-web-1550-900.png) 1x,
+            url(./img/scott-web-1550-900.png) 2x
+        );
+        background-image: image-set(
+            url(./img/scott-web-1550-900.avif) 1x,
+            url(./img/scott-web-1550-900.avif) 2x,
+            url(./img/scott-web-1550-900.webp) 1x,
+            url(./img/scott-web-1550-900.webp) 2x,
+            url(./img/scott-web-1550-900.png) 1x,
+            url(./img/scott-web-1550-900.png) 2x
+        );
+        
         background-size: cover;
         min-height: 700px;
         border-bottom: 2rem solid hsl(90deg, 50%, 70%);
