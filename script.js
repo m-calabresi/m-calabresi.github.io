@@ -2,9 +2,19 @@
     window.onload = function () {
         document.querySelector(".nav-mobile-toggle").onclick = mobileToggleClick;
         checkLayoutBehavior();
+        hideLoadScreen();
     }
     window.onresize = checkLayoutBehavior;
     window.onscroll = scrollFunction;
+
+    function hideLoadScreen() {
+        const loadTimeDuration = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--load-time-duration").substring(0, 4));
+        let loadScreen = document.querySelector(".load-screen");
+        loadScreen.style.opacity = 0;
+        setTimeout(() => {
+            loadScreen.remove();
+        }, loadTimeDuration);
+    }
 
     /**
      * Enables the mobile/desktop layout behavior depending on screen size.
