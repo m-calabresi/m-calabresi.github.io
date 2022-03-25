@@ -7,13 +7,21 @@
     window.onresize = checkLayoutBehavior;
     window.onscroll = scrollFunction;
 
+    /**
+     * Waits for an extra "loadExtraDuration" ms, then starts the fade
+     * animation that will last for "loadFadeDuration". After that, remove
+     * the load screen from the DOM.
+     */
     function hideLoadScreen() {
-        const loadTimeDuration = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--load-time-duration").substring(0, 4));
+        const loadExtraDuration = 300; // ms to wait before starting the fade animation
+        const loadFadeDuration = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--load-fade-duration").substring(0, 4)); //duration of the fade animation in ms
         let loadScreen = document.querySelector(".load-screen");
-        loadScreen.style.opacity = 0;
         setTimeout(() => {
-            loadScreen.remove();
-        }, loadTimeDuration);
+            loadScreen.style.opacity = 0;
+            setTimeout(() => {
+                loadScreen.remove();
+            }, loadFadeDuration);
+        }, loadExtraDuration);
     }
 
     /**
