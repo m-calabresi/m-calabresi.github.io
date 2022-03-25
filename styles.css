@@ -51,7 +51,7 @@ body {
     transition: opacity var(--load-fade-duration) ease-out;
 }
 
-.load-screen img {
+/* .load-screen img {
     animation: load-bounce 1.5s ease-out infinite;
 }
 
@@ -75,7 +75,7 @@ body {
     60%, 100% {
         transform: scale(1);
     }
-}
+} */
 
 /********************************
  *            HEADER            *
