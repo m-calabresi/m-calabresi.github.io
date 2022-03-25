@@ -1,24 +1,25 @@
 (function () {
-    window.onload = checkMobileBehavior;
-    window.onresize = checkMobileBehavior;
+    window.onload = function () {
+        document.querySelector(".nav-mobile-toggle").onclick = mobileToggleClick;
+        checkLayoutBehavior();
+    }
+    window.onresize = checkLayoutBehavior;
+    window.onscroll = scrollFunction;
 
     /**
-     * Enables the mobile/desktop behavior depending on screen size.
+     * Enables the mobile/desktop layout behavior depending on screen size.
      */
-    function checkMobileBehavior() {
-        let isMobile = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--is-mobile"));
+    function checkLayoutBehavior() {
+        const isMobile = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--is-mobile"));
         let navItems = document.querySelectorAll(".nav-item");
 
-        document.querySelector(".nav-mobile-toggle").onclick = mobileToggleClick;
-        window.onscroll = scrollFunction;
-
         if (isMobile) {
-            document.querySelector(".nav-mobile-items").append(...navItems);
-        } else {
-            let navItemsContainer = document.querySelector(".nav-items");
-            if (navItemsContainer.childElementCount === 2) {
+            let navItemsContainer = document.querySelector(".nav-mobile-items");
+            if (navItemsContainer.childElementCount === 0) {
                 navItemsContainer.append(...navItems);
             }
+        } else {
+            document.querySelector(".nav-items").append(...navItems);
         }
     }
 
