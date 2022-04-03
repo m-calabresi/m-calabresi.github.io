@@ -10,14 +10,14 @@
     --scrollbar-hover-color: rgb(70, 70, 70);
 
     --is-mobile: 0;
-    --load-fade-duration: 500ms; /*keep it in ms to allow proper interpreting from JS*/
+    --load-fade-duration: 500ms; /* keep it in ms to allow proper interpreting from JS */
 
     font-size: 62.5%; /* 10px */
     font-family: "Montserrat", sans-serif;
 }
 
 * {
-    -webkit-tap-highlight-color: transparent; /* remove blue outline on mobile click*/
+    -webkit-tap-highlight-color: transparent; /* remove blue outline on mobile click */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -30,7 +30,6 @@ html {
 body {
     background-color: var(--bg-color);
 }
-
 
 /********************************
  *         LOAD SCREEN          *
@@ -45,7 +44,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     z-index: 1000;
     opacity: 1;
     transition: opacity var(--load-fade-duration) ease-out;
@@ -172,11 +171,11 @@ h1 {
     font-size: 6.5rem;
     margin: 0;
     padding: 1rem 2rem;
-    color: hsl(50deg, 70%, 80%);
-    text-shadow: 1px 1px 3px #333;
+    color: rgb(240, 228, 168);
+    text-shadow: 1px 1px 3px rgb(51, 51, 51);
 }
 
-@media screen and (max-width: 600px) {
+@media all and (max-width: 600px) {
     header {
         background-image: url(./img/scott-web-600-600.png);
         background-image: -webkit-image-set(
@@ -198,13 +197,13 @@ h1 {
         background-size: cover;
         background-repeat: no-repeat;
         min-height: 600px;
-        border-bottom: 2rem solid hsl(20deg, 50%, 70%);
+        border-bottom: 2rem solid rgb(217, 166, 140);
         justify-content: flex-start;
         align-items: flex-end;
     }
 }
 
-@media screen and (min-width: 601px) and (max-width: 1200px) {
+@media all and (min-width: 601px) and (max-width: 1200px) {
     header {
         background-image: url(./img/scott-web-1000-500.png);
         background-image: -webkit-image-set(
@@ -225,13 +224,13 @@ h1 {
         );
         background-size: cover;
         min-height: 500px;
-        border-bottom: 2rem solid hsl(220deg, 50%, 70%);
+        border-bottom: 2rem solid rgb(140, 166, 217);
         justify-content: flex-end;
         align-items: flex-end;
     }
 }
 
-@media screen and (min-width: 1201px) {
+@media all and (min-width: 1201px) {
     header {
         background-image: url(./img/scott-web-1550-900.png);
         background-image: -webkit-image-set(
@@ -250,10 +249,9 @@ h1 {
             url(./img/scott-web-1550-900.png) 1x,
             url(./img/scott-web-1550-900.png) 2x
         );
-        
         background-size: cover;
         min-height: 700px;
-        border-bottom: 2rem solid hsl(90deg, 50%, 70%);
+        border-bottom: 2rem solid rgb(179, 217, 140);
         justify-content: flex-start;
         align-items: flex-start;
     }
@@ -358,7 +356,7 @@ footer .thin {
         margin: 0.5rem auto;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
-        background-color: #101010;
+        background-color: rgb(16, 16, 16);
     }
 
     .nav-mobile-toggle.active .bar:nth-child(2) {
