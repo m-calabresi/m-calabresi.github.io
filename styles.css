@@ -12,6 +12,8 @@
     --is-mobile: 0;
     --load-fade-duration: 500ms; /* keep it in ms to allow proper interpreting from JS */
 
+    --overflow-state: hidden;
+
     font-size: 62.5%; /* 10px */
     font-family: "Montserrat", sans-serif;
 }
@@ -25,6 +27,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow: var(--overflow-state);
 }
 
 body {
@@ -178,22 +181,6 @@ h1 {
 @media all and (max-width: 600px) {
     header {
         background-image: url(./img/scott-web-600-600.png);
-        background-image: -webkit-image-set(
-            url(./img/scott-web-600-600.avif) 1x,
-            url(./img/scott-web-600-600.avif) 2x,
-            url(./img/scott-web-600-600.webp) 1x,
-            url(./img/scott-web-600-600.webp) 2x,
-            url(./img/scott-web-600-600.png) 1x,
-            url(./img/scott-web-600-600.png) 2x
-        );
-        background-image: image-set(
-            url(./img/scott-web-600-600.avif) 1x,
-            url(./img/scott-web-600-600.avif) 2x,
-            url(./img/scott-web-600-600.webp) 1x,
-            url(./img/scott-web-600-600.webp) 2x,
-            url(./img/scott-web-600-600.png) 1x,
-            url(./img/scott-web-600-600.png) 2x
-        );
         background-size: cover;
         background-repeat: no-repeat;
         min-height: 600px;
@@ -201,59 +188,51 @@ h1 {
         justify-content: flex-start;
         align-items: flex-end;
     }
+
+    .webp header {
+        background-image: url(./img/scott-web-600-600.webp);
+    }
+
+    .avif header {
+        background-image: url(./img/scott-web-600-600.avif);
+    }
 }
 
 @media all and (min-width: 601px) and (max-width: 1200px) {
     header {
         background-image: url(./img/scott-web-1000-500.png);
-        background-image: -webkit-image-set(
-            url(./img/scott-web-1000-500.avif) 1x,
-            url(./img/scott-web-1000-500.avif) 2x,
-            url(./img/scott-web-1000-500.webp) 1x,
-            url(./img/scott-web-1000-500.webp) 2x,
-            url(./img/scott-web-1000-500.png) 1x,
-            url(./img/scott-web-1000-500.png) 2x
-        );
-        background-image: image-set(
-            url(./img/scott-web-1000-500.avif) 1x,
-            url(./img/scott-web-1000-500.avif) 2x,
-            url(./img/scott-web-1000-500.webp) 1x,
-            url(./img/scott-web-1000-500.webp) 2x,
-            url(./img/scott-web-1000-500.png) 1x,
-            url(./img/scott-web-1000-500.png) 2x
-        );
         background-size: cover;
         min-height: 500px;
         border-bottom: 2rem solid rgb(140, 166, 217);
         justify-content: flex-end;
         align-items: flex-end;
     }
+
+    .webp header {
+        background-image: url(./img/scott-web-1000-500.webp);
+    }
+
+    .avif header {
+        background-image: url(./img/scott-web-1000-500.avif);
+    }
 }
 
 @media all and (min-width: 1201px) {
     header {
         background-image: url(./img/scott-web-1550-900.png);
-        background-image: -webkit-image-set(
-            url(./img/scott-web-1550-900.avif) 1x,
-            url(./img/scott-web-1550-900.avif) 2x,
-            url(./img/scott-web-1550-900.webp) 1x,
-            url(./img/scott-web-1550-900.webp) 2x,
-            url(./img/scott-web-1550-900.png) 1x,
-            url(./img/scott-web-1550-900.png) 2x
-        );
-        background-image: image-set(
-            url(./img/scott-web-1550-900.avif) 1x,
-            url(./img/scott-web-1550-900.avif) 2x,
-            url(./img/scott-web-1550-900.webp) 1x,
-            url(./img/scott-web-1550-900.webp) 2x,
-            url(./img/scott-web-1550-900.png) 1x,
-            url(./img/scott-web-1550-900.png) 2x
-        );
         background-size: cover;
         min-height: 700px;
         border-bottom: 2rem solid rgb(179, 217, 140);
         justify-content: flex-start;
         align-items: flex-start;
+    }
+
+    .webp header {
+        background-image: url(./img/scott-web-1550-900.webp);
+    }
+
+    .avif header {
+        background-image: url(./img/scott-web-1550-900.avif);
     }
 }
 
