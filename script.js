@@ -21,7 +21,6 @@
             setTimeout(() => {
                 loadScreen.remove();
             }, loadFadeDuration);
-            document.documentElement.style.setProperty("--overflow-state", "auto"); // enable scrollbar
         }, loadExtraDuration);
     }
 

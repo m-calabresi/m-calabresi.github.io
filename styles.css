@@ -12,8 +12,6 @@
     --is-mobile: 0;
     --load-fade-duration: 500ms; /* keep it in ms to allow proper interpreting from JS */
 
-    --overflow-state: hidden;
-
     font-size: 62.5%; /* 10px */
     font-family: "Montserrat", sans-serif;
 }
@@ -27,7 +25,6 @@
 
 html {
     scroll-behavior: smooth;
-    overflow: var(--overflow-state);
 }
 
 body {
