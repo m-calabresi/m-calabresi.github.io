@@ -109,7 +109,7 @@ nav {
 
 .nav-logo img {
     width: 75%;
-    transition: width 0.1s ease;
+    transition: width 0.2s ease;
 }
 
 .nav-logo img.shrink {
