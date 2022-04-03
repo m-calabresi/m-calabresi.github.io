@@ -10,7 +10,7 @@
     --scrollbar-hover-color: rgb(70, 70, 70);
 
     --is-mobile: 0;
-    --load-fade-duration: 500ms; /* keep it in ms to allow proper interpreting from JS */
+    --load-fade-duration: 200ms; /* keep it in ms to allow proper interpreting from JS */
 
     font-size: 62.5%; /* 10px */
     font-family: "Montserrat", sans-serif;
