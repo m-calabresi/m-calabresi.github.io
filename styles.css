@@ -89,7 +89,7 @@ nav {
     z-index: 999;
     justify-content: center;
     align-items: center;
-    padding: 1.4rem 0;
+    padding: 1.5rem 0;
     background-color: var(--bg-color);
 }
 
@@ -101,19 +101,16 @@ nav {
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     order: 1;
 }
 
 .nav-logo img {
-    width: 75%;
-    transition: width 0.3s ease;
+    transition: width 0.2s ease, height 0.2s ease;
 }
 
 .nav-logo img.shrink {
-    width: 47%;
+    width: 56px;
+    height: 41px;
 }
 
 .nav-item:nth-of-type(n + 4) {
