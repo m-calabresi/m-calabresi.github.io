@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap");
 
 :root {
-    --brand-color: rgb(0, 0, 0);
     --bg-color: rgb(250, 250, 250);
     --text-color: rgb(35, 35, 35);
     --footer-bg-color: rgb(35, 35, 35);
@@ -124,14 +123,15 @@ nav {
     outline: none;
     color: var(--text-color);
     border-bottom: 0.2rem solid var(--bg-color);
-    transition: border-color 0.2s ease;
+    transition: border-bottom-color 0.2s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .nav-item:hover,
 .nav-item:active,
 .nav-selected {
-    color: var(--brand-color);
-    border-color: var(--brand-color);
+    border-bottom-color: var(--text-color);
 }
 
 .nav-mobile-items,
@@ -146,11 +146,7 @@ nav {
 
 .nav-logo:focus-visible,
 .nav-item:focus-visible {
-    outline: 0.2rem solid var(--brand-color);
-}
-
-.nav-logo:active {
-    outline: none;
+    outline: 0.2rem solid var(--text-color);
 }
 
 /********************************
@@ -173,6 +169,7 @@ h1 {
     padding: 1rem 2rem;
     color: rgb(240, 228, 168);
     text-shadow: 1px 1px 3px rgb(51, 51, 51);
+    word-break: break-all;
 }
 
 @media all and (max-width: 600px) {
@@ -236,6 +233,11 @@ h1 {
 /********************************
  *          SCROLLBAR           *
  ********************************/
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-color) var(--bg-color);
+}
 
 ::-webkit-scrollbar {
     width: 1.5rem;
