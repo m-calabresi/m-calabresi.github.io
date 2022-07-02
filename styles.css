@@ -157,6 +157,18 @@ main {
     font-size: 1.6rem;
 }
 
+.main-margin {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 header {
     display: flex;
     flex-direction: row;
