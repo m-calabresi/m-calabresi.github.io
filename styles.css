@@ -7,9 +7,13 @@
     --footer-text-color: rgb(250, 250, 250);
     --scrollbar-color: rgb(122, 122, 122);
     --scrollbar-hover-color: rgb(70, 70, 70);
+    --load-bg-color: rgb(255, 255, 255);
+    --progress-bg-color: rgb(226, 226, 226);
+    --progress-color: rgb(49, 49, 49);
 
     --is-mobile: 0;
-    --load-fade-duration: 200ms; /* keep it in ms to allow proper interpreting from JS */
+    --load-duration: 300ms; /* ms to wait before starting the fade animation. keep it in ms to allow proper interpreting from JS */
+    --load-fade-duration: 200ms; /* duration of the fade animation in ms. keep it in ms to allow proper interpreting from JS */
 
     font-size: 62.5%; /* 10px */
     font-family: "Montserrat", sans-serif;
@@ -38,12 +42,13 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--load-bg-color);
     z-index: 1000;
     opacity: 1;
     transition: opacity var(--load-fade-duration) ease-out;
@@ -74,6 +79,31 @@ body {
         transform: scale(1);
     }
 } */
+
+.progress {
+    margin: 5rem auto 0 auto;
+    width: 120px;
+    height: 6px;
+    background-color: var(--progress-bg-color);
+    border-radius: 1000vw;
+}
+
+.progress .progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--progress-color);
+    border-radius: 1000vw;
+    animation: fill-bar var(--load-duration) 1 cubic-bezier(0.32, 0.51, 0.93, -0.26) forwards;
+}
+
+@keyframes fill-bar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
 
 /********************************
  *            HEADER            *

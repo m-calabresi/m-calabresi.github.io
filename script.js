@@ -13,8 +13,8 @@
      * the load screen from the DOM.
      */
     function hideLoadScreen() {
-        const loadExtraDuration = 300; // ms to wait before starting the fade animation
-        const loadFadeDuration = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--load-fade-duration").substring(0, 4)); //duration of the fade animation in ms
+        const loadExtraDuration = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--load-duration").substring(0, 4));
+        const loadFadeDuration = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--load-fade-duration").substring(0, 4));
         let loadScreen = document.querySelector(".load-screen");
         setTimeout(() => {
             loadScreen.style.opacity = 0;
