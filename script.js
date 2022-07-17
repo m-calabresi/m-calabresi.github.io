@@ -8,13 +8,12 @@
     window.onscroll = scrollFunction;
 
     /**
-     * Waits for an extra "loadExtraDuration" ms, then starts the fade
-     * animation that will last for "loadFadeDuration". After that, remove
-     * the load screen from the DOM.
+     * Waits for an extra "loadExtraDuration" ms, then starts the fade animation that will last for "loadFadeDuration".
+     * After that, remove the load screen from the DOM.
      */
     function hideLoadScreen() {
-        const loadExtraDuration = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--load-duration").substring(0, 4));
-        const loadFadeDuration = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--load-fade-duration").substring(0, 4));
+        const loadExtraDuration = getCssProperty("--load-duration");
+        const loadFadeDuration = getCssProperty("--load-fade-duration");
         let loadScreen = document.querySelector(".load-screen");
         setTimeout(() => {
             loadScreen.style.opacity = 0;
@@ -28,7 +27,7 @@
      * Enables the mobile/desktop layout behavior depending on screen size.
      */
     function checkLayoutBehavior() {
-        const isMobile = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--is-mobile"));
+        const isMobile = getCssProperty("--is-mobile", false);
         let navItems = document.querySelectorAll(".nav-item");
 
         if (isMobile) {
@@ -42,8 +41,7 @@
     }
 
     /**
-     * On mobile-toggle click, show menu (if on top of the page),
-     * or nothing (if not at the top)
+     * On mobile-toggle click, show menu (if on top of the page), or nothing (if not at the top).
      */
     function mobileToggleClick() {
         document.querySelector(".nav-mobile-items").classList.toggle("visible");
@@ -59,10 +57,25 @@
     }
 
     /**
-     * Whether or not the visible portion of the screen is far
-     * from the top part of the page.
+     * Whether or not the visible portion of the screen is far from the top part of the page.
+     * 
+     * @returns true if the visible portion of the screen is far from the top part of the page, false otherwise.
      */
     function isPageScrolled() {
         return document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
+    }
+
+    /**
+     * Returns the CSS property associated to the given propertyName.
+     * Optionally it can remove the measurement unit for correct parting.
+     * 
+     * @param {string} propertyName the name of the property to be returned.
+     * @param {boolean} removeUnit true if the property needs the measurement unit to be removed, false otherwise.
+     * @returns the CSS property as an integer value.
+     */
+    function getCssProperty(propertyName, removeUnit = true) {
+        let property = getComputedStyle(document.documentElement).getPropertyValue(propertyName);
+        property = removeUnit ? property.substring(0, 4) : property;
+        return parseInt(property, 10);
     }
 })();
