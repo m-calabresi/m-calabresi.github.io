@@ -35,6 +35,7 @@
             if (navItemsContainer.childElementCount === 0) {
                 navItemsContainer.append(...navItems);
             }
+            updateTabIndexBehavior();
         } else {
             document.querySelector(".nav-items").append(...navItems);
         }
@@ -46,6 +47,16 @@
     function mobileToggleClick() {
         document.querySelector(".nav-mobile-items").classList.toggle("visible");
         document.querySelector(".nav-mobile-toggle").classList.toggle("active");
+        updateTabIndexBehavior();
+    }
+
+    /**
+     * On mobile, set tabindex=0 when menu is expanded (allowing tab navigation). Set tabindex=-1 when
+     * collapsed to prevent navigtion on hidden menu items.
+     */
+    function updateTabIndexBehavior() {
+        document.querySelectorAll(".nav-mobile-items .nav-item").forEach(item => item.setAttribute("tabindex", "-1"));
+        document.querySelectorAll(".nav-mobile-items.visible .nav-item").forEach(item => item.setAttribute("tabindex", "0"));
     }
 
     /**

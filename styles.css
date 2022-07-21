@@ -183,9 +183,10 @@ nav {
     border: 0;
 }
 
-.nav-logo:focus-visible,
 .nav-item:focus-visible {
     outline: 0.2rem solid var(--text-color);
+    border-radius: 0.1rem;
+    outline-offset: 0.2rem;
 }
 
 /********************************
@@ -328,6 +329,19 @@ footer a {
     color: inherit;
 }
 
+footer .social a:focus-visible,
+footer .credits a:focus-visible {
+    outline: none;
+}
+
+footer .social a:focus-visible svg,
+footer .contacts a:focus-visible,
+footer .credits a:focus-visible svg {
+    outline: 0.2rem solid var(--footer-text-color);
+    outline-offset: 0.3rem;
+    border-radius: 0.1rem;
+}
+
 footer .social a {
     margin: 0 1rem;
 }
@@ -400,6 +414,16 @@ footer .thin {
         transform: translateY(-0.8rem) rotate(-45deg);
     }
 
+    .nav-mobile-toggle a:focus-visible {
+        outline: none;
+    }
+
+    .nav-mobile-toggle a:focus-visible .bar-group {
+        outline: 0.2rem solid var(--text-color);
+        outline-offset: 0.4rem;
+        border-radius: 0.1rem;
+    }
+
     .nav-mobile-items {
         display: flex;
         flex-direction: column;
@@ -416,6 +440,10 @@ footer .thin {
     .nav-mobile-items.visible {
         margin-top: 1rem;
         max-height: 20rem;
+    }
+
+    .nav-mobile-items {
+        padding: 0.5rem;
     }
 
     footer .contacts {
