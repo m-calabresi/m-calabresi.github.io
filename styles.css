@@ -148,20 +148,29 @@ nav {
 
 .nav-item {
     font-size: 1.6rem;
-    padding: 0.5rem 0;
+    padding-top: 0.3rem; /* compensates the ::after height at the bottom */
     text-decoration: none;
-    outline: none;
+    /* outline: none; */
     color: var(--text-color);
-    border-bottom: 0.2rem solid var(--bg-color);
-    transition: border-bottom-color 0.2s ease;
     text-transform: uppercase;
     white-space: nowrap;
 }
 
-.nav-item:hover,
-.nav-item:active,
-.nav-selected {
-    border-bottom-color: var(--text-color);
+.nav-item::after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0;
+    top: 5px;
+    background: transparent;
+    transition: all 0.3s;
+    
+}
+  
+.nav-item:hover::after, .nav-item.nav-selected::after {
+    width: 100%;
+    background: var(--text-color);
 }
 
 .nav-mobile-items,
