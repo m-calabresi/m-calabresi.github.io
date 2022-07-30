@@ -35,10 +35,10 @@
             if (navItemsContainer.childElementCount === 0) {
                 navItemsContainer.append(...navItems);
             }
-            updateTabIndexBehavior();
         } else {
             document.querySelector(".nav-items").append(...navItems);
         }
+        updateTabIndexBehavior();
     }
 
     /**
@@ -57,6 +57,7 @@
     function updateTabIndexBehavior() {
         document.querySelectorAll(".nav-mobile-items .nav-item").forEach(item => item.setAttribute("tabindex", "-1"));
         document.querySelectorAll(".nav-mobile-items.visible .nav-item").forEach(item => item.setAttribute("tabindex", "0"));
+        document.querySelectorAll(".nav-items .nav-item").forEach(item => item.setAttribute("tabindex", "0"));
     }
 
     /**
