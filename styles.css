@@ -85,14 +85,12 @@ body {
     width: 120px;
     height: 6px;
     background-color: var(--progress-bg-color);
-    border-radius: 1000vw;
 }
 
 .progress .progress-bar {
     height: 100%;
     width: 0%;
     background-color: var(--progress-color);
-    border-radius: 1000vw;
     animation: fill-bar var(--load-duration) 1 cubic-bezier(0.32, 0.51, 0.93, -0.26) forwards;
 }
 
@@ -165,10 +163,11 @@ nav {
     top: 5px;
     background: transparent;
     transition: all 0.3s;
-    
 }
-  
-.nav-item:hover::after, .nav-item.nav-selected::after {
+
+.nav-item:hover::after,
+.nav-item.nav-selected::after,
+.nav-item:focus-visible::after {
     width: 100%;
     background: var(--text-color);
 }
@@ -184,9 +183,9 @@ nav {
 }
 
 .nav-item:focus-visible {
-    outline: 0.2rem solid var(--text-color);
-    border-radius: 0.1rem;
+    outline: 0.3rem solid var(--text-color);
     outline-offset: 0.2rem;
+    border-radius: 0;
 }
 
 /********************************
@@ -337,9 +336,9 @@ footer .credits a:focus-visible {
 footer .social a:focus-visible svg,
 footer .contacts a:focus-visible,
 footer .credits a:focus-visible svg {
-    outline: 0.2rem solid var(--footer-text-color);
+    outline: 0.3rem solid var(--footer-text-color);
     outline-offset: 0.3rem;
-    border-radius: 0.1rem;
+    border-radius: 0;
 }
 
 footer .social a {
@@ -371,7 +370,8 @@ footer .thin {
  *        MEDIA QUERIES         *
  ********************************/
 
-@media all and (max-width: 64rem) { /* uses base font-size (16px). to activate at 1024px: 64rem=1024px/16px */
+@media all and (max-width: 64rem) {
+    /* uses base font-size (16px). to activate at 1024px: 64rem=1024px/16px */
     :root {
         --is-mobile: 1;
     }
@@ -419,9 +419,9 @@ footer .thin {
     }
 
     .nav-mobile-toggle a:focus-visible .bar-group {
-        outline: 0.2rem solid var(--text-color);
+        outline: 0.3rem solid var(--text-color);
         outline-offset: 0.4rem;
-        border-radius: 0.1rem;
+        border-radius: 0;
     }
 
     .nav-mobile-items {
